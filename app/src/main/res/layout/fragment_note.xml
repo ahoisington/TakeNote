@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
+    <EditText
         android:id="@+id/title"
-        android:layout_width="fill_parent"
+        android:inputType="text"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:hint="Title:"
+        android:textColor="#000000"
+        android:padding="15dp"
+        android:textColorHint="@color/gray"
+        android:layout_gravity="center_horizontal"
+        android:singleLine="true"/>
+
     <TextView
         android:id="@+id/datetime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:padding="5dp"
+        android:singleLine="true"
         android:textColor="@color/gray"
-        android:text=""/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_gravity="center_horizontal"
+        android:text="date &amp;time"
+        android:textSize="8sp" />
 
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="let's make a note!"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--/>-->
-    <TextView
+    <EditText
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="let's make a note!"
-        android:background="@color/darkgreen2"
-        android:textColor="@color/lightgreen"
+        android:hint="let's make a note!"
+        android:inputType="textMultiLine"
+        android:background="@android:color/transparent"
         android:padding="12dp"
-        android:gravity="center"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"/>
+        android:textColor="@color/darkgreen" />
 
-</RelativeLayout>
+</LinearLayout>

@@ -43,5 +43,4 @@ public class MainActivity extends AppCompatActivity {
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setViewPager(mViewPager);
     }
-
 }
