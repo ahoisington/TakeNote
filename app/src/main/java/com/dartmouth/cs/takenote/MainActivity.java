@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
 
         fragments = new ArrayList<Fragment>();
+        fragments.add(new PaletteFragment());
         fragments.add(new NoteFragment());
         fragments.add(new NoteListFragment());
         fragments.add(new SettingsFragment());
@@ -37,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         mViewPageAdapter = new TabViewPageAdapter(getSupportFragmentManager(),fragments);
 
         mViewPager.setAdapter(mViewPageAdapter);
+        mViewPager.setCurrentItem(1); // sets note fragment to default
 
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setViewPager(mViewPager);
-
     }
 
 }

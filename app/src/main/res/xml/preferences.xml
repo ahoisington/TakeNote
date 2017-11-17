@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    >
+    <!--<PreferenceCategory-->
+        <!--android:title="Notes Settlings"-->
+        <!--android:key="personal_settings"-->
+        <!--android:layout="@layout/fragment_palette"/>-->
+    <PreferenceCategory
+        android:title=""
+        android:key="pref_personal_settings">
+        <SwitchPreference
+            android:key="key1"
+            android:title="Personal Information"
+            android:summary="Allow other users to find you"
+            android:defaultValue="true" />
+        <SwitchPreference
+            android:key="signOut"
+            android:title="Sign Out"
+            android:defaultValue="false" />
+    </PreferenceCategory>
 
 </PreferenceScreen>
