@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+ <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/notelist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
 
     <!--<TextView-->
         <!--android:layout_width="match_parent"-->
@@ -11,16 +18,16 @@
         <!--android:layout_alignParentLeft="true"-->
         <!--android:layout_alignParentTop="true"/>-->
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="list of notes here we come!"
-        android:background="@color/darkgreen2"
-        android:textColor="@color/lightgreen"
-        android:padding="12dp"
-        android:gravity="center"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"/>
+    <!--<TextView-->
+        <!--android:id="@+id/text"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="list of notes here we come!"-->
+        <!--android:background="@color/darkgreen2"-->
+        <!--android:textColor="@color/lightgreen"-->
+        <!--android:padding="12dp"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_marginTop="80dp"-->
+        <!--android:layout_marginBottom="8dp"/>-->
 
 </RelativeLayout>

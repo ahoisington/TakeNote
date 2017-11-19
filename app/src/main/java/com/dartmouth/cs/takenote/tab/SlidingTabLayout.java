@@ -1,4 +1,4 @@
-package com.dartmouth.cs.takenote;
+package com.dartmouth.cs.takenote.tab;
 
 /**
  * Created by acaciah on 11/16/17.
@@ -44,22 +44,6 @@ import android.widget.TextView;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
-import android.content.Context;
-import android.graphics.Typeface;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.util.AttributeSet;
-import android.util.SparseArray;
-import android.util.TypedValue;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.HorizontalScrollView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 /**
  * To be used with ViewPager to provide a tab indicator component which give constant feedback as to

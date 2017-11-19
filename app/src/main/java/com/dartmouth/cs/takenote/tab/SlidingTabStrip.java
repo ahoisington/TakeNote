@@ -1,4 +1,4 @@
-package com.dartmouth.cs.takenote;
+package com.dartmouth.cs.takenote.tab;
 
 /**
  * Created by acaciah on 11/16/17.
@@ -30,17 +30,6 @@ import android.widget.LinearLayout;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.util.AttributeSet;
-import android.util.TypedValue;
-import android.view.View;
-import android.widget.LinearLayout;
 
 
 class SlidingTabStrip extends LinearLayout {
