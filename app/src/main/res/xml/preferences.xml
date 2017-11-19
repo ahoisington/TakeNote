@@ -9,17 +9,20 @@
         <!--android:key="personal_settings"-->
         <!--android:layout="@layout/fragment_palette"/>-->
     <PreferenceCategory
-        android:title=""
-        android:key="pref_personal_settings">
+        android:title="General"
+        android:key="prefGameSettings">
+        <EditTextPreference
+            android:title="Personal Email"
+            android:key="email"
+            android:summary="Insert your personal email"
+            android:text="Please set an email"/>
         <SwitchPreference
-            android:key="key1"
-            android:title="Personal Information"
-            android:summary="Allow other users to find you"
-            android:defaultValue="true" />
-        <SwitchPreference
-            android:key="signOut"
-            android:title="Sign Out"
-            android:defaultValue="false" />
+            android:key="delete"
+            android:title="Delete Notes"
+            android:defaultValue="false"
+            />
+
     </PreferenceCategory>
+
 
 </PreferenceScreen>
