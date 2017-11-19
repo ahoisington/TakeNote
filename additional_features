@@ -1,0 +1,26 @@
+IMPORTANT TO ADD IF POSSIBLE:
+palette:
+    - bold, underlind, italics
+    - colors
+    - small text size, medium text size, large text size
+    
+notelist:
+    - if a panel is clicked, sends you to the note fragment and loads the data and content from that note
+    
+
+
+
+CAN ADD IF WE HAVE TIME:
+settings fragment:
+    - delete button deletes notes lol.  could implement a dialog box to ask/double check with the user to see if they really want to delete their notes
+        - ALSO delete button is very finicky and notelist does not update immediately when notes are deleted.
+    - add more preferences because currently there are only three: personal email, delete notes, and share notes with others (although this last preference doesnt do anything)
+    
+
+WHAT I'VE DONE:
+    - set up basic functionality for everything except palette fragment
+        - save notes to internal storage 
+        - show the list of notes using notelist adapter
+        - preferences page
+        - delete notes in settings
+
