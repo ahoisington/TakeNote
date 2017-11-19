@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private ArrayList<Fragment> fragments;
     private TabViewPageAdapter mViewPageAdapter;
+    public boolean toasted = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
         slidingTabLayout.setDistributeEvenly(true);
         slidingTabLayout.setViewPager(mViewPager);
+
+        if (toasted==false){
+            Toast.makeText(this.getApplicationContext(), "Hi! Make sure to save your note before exiting!",Toast.LENGTH_SHORT).show();
+            toasted = true;
+        }
+
+
     }
 }

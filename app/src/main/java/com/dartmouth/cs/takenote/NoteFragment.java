@@ -53,7 +53,6 @@ public class NoteFragment extends Fragment {
         count = Integer.valueOf(sp.getString("count",""));
         currId = Integer.valueOf(sp.getString("currId",""));
 
-        Toast.makeText(getContext(), "Hi! Make sure to save your note before exiting!",Toast.LENGTH_SHORT).show();
 
 
         titleView = (EditText) rootView.findViewById(R.id.title);

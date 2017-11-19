@@ -39,7 +39,7 @@ public class NoteListAdapter extends ArrayAdapter<String> {
         this.noteTitleList = noteTitleList;
         this.noteDateList = noteDateList;
         this.noteIdList = noteIdList;
-        
+
         Log.d("DEBUG", "NoteListAdapter: this is titlelist "+noteTitleList);
         Log.d("DEBUG", "NoteListAdapter: this is datelist "+noteDateList);
         Log.d("DEBUG", "NoteListAdapter: this is idlist "+noteIdList);
