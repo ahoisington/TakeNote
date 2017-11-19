@@ -85,9 +85,8 @@ public class NoteFragment extends Fragment {
     }
 
     private void saveNote(String title, String date, String content){
+
         //save currId number and save count
-
-
         count = count + 1;
         currId = currId + 1;
         editor.putString("count", String.valueOf(count));
@@ -96,21 +95,26 @@ public class NoteFragment extends Fragment {
 
         //save note to internal storage file
         try{
-            FileOutputStream fos = getContext().getApplicationContext().openFileOutput("note"+currId, Context.MODE_PRIVATE);
+            String filepath = getContext().getFilesDir() + "/" + "note"+currId+".txt";
+            StringBuilder text = new StringBuilder();
+            FileOutputStream fos = new FileOutputStream (new File(filepath));
+//            FileOutputStream fos = getContext().getApplicationContext().openFileOutput(filepath, Context.MODE_PRIVATE);
             writer = new BufferedWriter(new OutputStreamWriter(fos));
-            String eol = System.getProperty("line.seperator");
-            writer.write(title + eol);
-            writer.write(date + eol);
-            writer.write(content+eol);
+            String eol = System.getProperty("line.separator");
+            writer.write(title);
+            writer.write("\n\r");
+            writer.write(date);
+            writer.newLine();
+            writer.write(content);
+            writer.newLine();
             writer.close();
 
-            String filename = "note"+currId;
-            File file = new File(getContext().getFilesDir(), filename);
+            File file = new File(filepath);
             if(file.exists()){
                 Toast.makeText(getContext().getApplicationContext(), "Your note has been saved :) note id is "+currId,Toast.LENGTH_SHORT).show();
-                Log.d("DEBUG", "saveNote: file exists "+filename);
+//                Log.d("DEBUG", "saveNote: file exists "+filepath);
             } else{
-                Log.d("DEBUG", "saveNote: doesnt exist sad "+filename);
+                Log.d("DEBUG", "saveNote: doesnt exist sad "+filepath);
             }
 
         }catch(FileNotFoundException e){

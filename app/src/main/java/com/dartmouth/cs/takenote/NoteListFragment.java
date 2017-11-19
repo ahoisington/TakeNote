@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import java.io.File;
 import android.widget.Toast;
 
 import com.dartmouth.cs.takenote.tab.NoteListAdapter;
@@ -16,6 +17,7 @@ import com.dartmouth.cs.takenote.tab.NoteListAdapter;
 import java.io.FileInputStream;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -36,10 +38,11 @@ public class NoteListFragment extends Fragment {
     private ArrayList<String> noteDateList;
     private ArrayList<Integer> noteIdList;
     private Integer count;
+    private View rootView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_notelist, container, false);
+        rootView = inflater.inflate(R.layout.fragment_notelist, container, false);
         sp = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
         editor = sp.edit();
         count = Integer.valueOf(sp.getString("count", ""));
@@ -61,27 +64,52 @@ public class NoteListFragment extends Fragment {
         String filename;
         Log.d("DEBUG", "readNotes: endId is "+endId);
 
-        try{
-            for(int currId=1;currId<endId;currId++){
-                filename = "note"+currId;
-                FileInputStream file = getContext().openFileInput(filename);
-                reader = new BufferedReader(new InputStreamReader(file));
-                String eol = System.getProperty("line.seperator");
-                String title = reader.readLine();
-                String date = reader.readLine();
+        try {
+            for (int id = 1; id < endId; id=id+1) {
+                Log.d("DEBUG", "readNotes: currId is " + id + " endId is "+endId);
 
-                noteTitleList.add(title);
-                noteDateList.add(date);
-                noteIdList.add(currId);
+                String filepath = getContext().getFilesDir() + "/" + "note"+id+".txt";
+                Log.d("DEBUG", "readNotes: filePath is " + filepath);
+                Log.d("DEBUG", "readNotes: here1");
 
-                currId++;
-                reader.close();
+                File f = new File(filepath);
+
+                if(f.exists()){
+                    StringBuilder text = new StringBuilder();
+                    FileInputStream fis = new FileInputStream (f);
+
+                    reader = new BufferedReader(new InputStreamReader(fis));
+                    String line = "";
+                    String title="";
+                    String date="";
+                    String lines[];
+                    if ((line = reader.readLine()) != null){
+                        text.append(line.replaceAll("null", "\n"));
+                        lines =text.toString().split("\\r?\\n");
+                        title=lines[0];
+                        date=lines[1];
+                    }
+
+                    Log.d("DEBUG", "readNotes: id "+id+" title " + title+ " date "+date );
+
+                    noteTitleList.add(title);
+                    noteDateList.add(date);
+                    noteIdList.add(id);
+
+                    id++;
+                    reader.close();
+                }
             }
+
+
         } catch(FileNotFoundException e){
             Log.d("ERROR", "onCreateView: "+e);
             e.printStackTrace();
         }catch (IOException e){
             Log.d("ERROR", "onCreateView: "+e);
+            e.printStackTrace();
+        }catch (NullPointerException e) {
+            Log.d("ERROR", "onCreateView: " + e);
             e.printStackTrace();
         }
     }
