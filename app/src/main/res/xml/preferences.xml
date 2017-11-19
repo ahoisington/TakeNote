@@ -21,6 +21,11 @@
             android:title="Delete Notes"
             android:defaultValue="false"
             />
+        <CheckBoxPreference
+            android:key="sharing"
+            android:summary="Would you like to share your notes with others?"
+            android:title="Note sharing"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

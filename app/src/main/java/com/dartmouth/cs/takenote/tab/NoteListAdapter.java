@@ -39,9 +39,7 @@ public class NoteListAdapter extends ArrayAdapter<String> {
         this.noteTitleList = noteTitleList;
         this.noteDateList = noteDateList;
         this.noteIdList = noteIdList;
-
-        Toast.makeText(getContext().getApplicationContext(), "adapter called woah!",Toast.LENGTH_SHORT).show();
-
+        
         Log.d("DEBUG", "NoteListAdapter: this is titlelist "+noteTitleList);
         Log.d("DEBUG", "NoteListAdapter: this is datelist "+noteDateList);
         Log.d("DEBUG", "NoteListAdapter: this is idlist "+noteIdList);
@@ -54,7 +52,6 @@ public class NoteListAdapter extends ArrayAdapter<String> {
 
 
     public View getView(int position, View view, ViewGroup parent) {
-        Log.d("DEBUG", "HI WE ARE HERE");
 
 
         LayoutInflater inflater=context.getLayoutInflater();
@@ -63,7 +60,7 @@ public class NoteListAdapter extends ArrayAdapter<String> {
         TextView titleView = (TextView) rowView.findViewById(R.id.title);
         TextView dateView = (TextView) rowView.findViewById(R.id.date);
 
-        Log.d("DEBUG", "NoteListAdapter: current title "+noteTitleList.get(position)+" date is "+noteDateList.get(position));
+        Log.d("DEBUG", "NoteListAdapter: current title "+noteTitleList.get(position)+" date is "+noteDateList.get(position)+ " id is "+ noteIdList.get(position));
 
         titleView.setText(noteTitleList.get(position));
         dateView.setText(noteDateList.get(position));

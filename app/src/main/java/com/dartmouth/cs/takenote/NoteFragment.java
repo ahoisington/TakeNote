@@ -63,12 +63,11 @@ public class NoteFragment extends Fragment {
         //updates date view
         titleView.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {}
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {            }
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                 DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
                 Calendar cal = Calendar.getInstance();
-                dateView.setText(dateFormat.format(cal.getTime()));
-            }
+                dateView.setText(dateFormat.format(cal.getTime()));           }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
 
         saveBtn.setOnClickListener(new View.OnClickListener() {

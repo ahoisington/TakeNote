@@ -70,7 +70,6 @@ public class NoteListFragment extends Fragment {
 
                 String filepath = getContext().getFilesDir() + "/" + "note"+id+".txt";
                 Log.d("DEBUG", "readNotes: filePath is " + filepath);
-                Log.d("DEBUG", "readNotes: here1");
 
                 File f = new File(filepath);
 
@@ -87,7 +86,9 @@ public class NoteListFragment extends Fragment {
                         text.append(line.replaceAll("null", "\n"));
                         lines =text.toString().split("\\r?\\n");
                         title=lines[0];
-                        date=lines[1];
+                        if (lines.length>1){
+                            date=lines[1];
+                        }
                     }
 
                     Log.d("DEBUG", "readNotes: id "+id+" title " + title+ " date "+date );
@@ -116,7 +117,6 @@ public class NoteListFragment extends Fragment {
 
     @Override
     public void onResume() {
-        Toast.makeText(getContext().getApplicationContext(), "resumed!",Toast.LENGTH_SHORT).show();
         super.onResume();
     }
 }
