@@ -7,7 +7,10 @@ palette:
 notelist:
     - if a panel is clicked, sends you to the note fragment and loads the data and content from that note
     
-
+functionality that could be improved:
+    - notelist update lags
+    - notelist doesnt show that files have been deleted immediately
+    - some notes are saved without the date saving (probably because of where/how date is saved in notefragment.  wasnt sure of a better way to do this)
 
 
 CAN ADD IF WE HAVE TIME:
