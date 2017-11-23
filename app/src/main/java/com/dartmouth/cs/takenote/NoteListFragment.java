@@ -20,7 +20,11 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 
 /**
  * Created by acaciah on 11/16/17.
@@ -45,7 +49,7 @@ public class NoteListFragment extends Fragment {
         rootView = inflater.inflate(R.layout.fragment_notelist, container, false);
         sp = getActivity().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
         editor = sp.edit();
-        count = Integer.valueOf(sp.getString("count", ""));
+        count = Integer.valueOf(sp.getString("count", "0"));
 
         noteTitleList = new ArrayList<String>();
         noteDateList = new ArrayList<String>();
@@ -60,12 +64,12 @@ public class NoteListFragment extends Fragment {
     }
 
     private void readNotes (){
-        Integer endId = Integer.valueOf(sp.getString("currId", ""));
+        Integer endId = Integer.valueOf(sp.getString("currId", "0"));
         String filename;
         Log.d("DEBUG", "readNotes: endId is "+endId);
 
         try {
-            for (int id = 1; id < endId; id=id+1) {
+            for (int id = 0; id < endId+1; id=id+1) {
                 Log.d("DEBUG", "readNotes: currId is " + id + " endId is "+endId);
 
                 String filepath = getContext().getFilesDir() + "/" + "note"+id+".txt";
@@ -92,16 +96,18 @@ public class NoteListFragment extends Fragment {
                     }
 
                     Log.d("DEBUG", "readNotes: id "+id+" title " + title+ " date "+date );
+                    DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
+                    Calendar cal = Calendar.getInstance();
+                    String newDate = (dateFormat.format(cal.getTime()));
 
                     noteTitleList.add(title);
-                    noteDateList.add(date);
+                    noteDateList.add(newDate);
                     noteIdList.add(id);
 
                     id++;
                     reader.close();
                 }
             }
-
 
         } catch(FileNotFoundException e){
             Log.d("ERROR", "onCreateView: "+e);

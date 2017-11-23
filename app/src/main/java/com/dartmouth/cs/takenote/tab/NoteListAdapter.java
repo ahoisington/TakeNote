@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * Created by acaciah on 11/19/17.
  */
 
-public class NoteListAdapter extends ArrayAdapter<String> {
+public class NoteListAdapter extends ArrayAdapter<String>{
 
     private final Activity context;
     private ArrayList<String> noteTitleList;
@@ -65,7 +65,13 @@ public class NoteListAdapter extends ArrayAdapter<String> {
         titleView.setText(noteTitleList.get(position));
         dateView.setText(noteDateList.get(position));
 
+        rowView.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 //        infoView.setText(noteInfoList.get(position)); //populate note info with top two lines of the note
 
         return rowView;

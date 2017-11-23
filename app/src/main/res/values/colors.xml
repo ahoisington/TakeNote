@@ -8,5 +8,24 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="gray">#D3D3D3</color>
+    <color name="gray">#d3d3d3</color>
+
+    <color name="lightGray">#f1f1f1</color>
+    <color name="darkGray">#676767</color>
+
+    <color name="black">#000000</color>
+    <color name="red">#ff1b1b</color>
+    <color name="orange">#fc801b</color>
+    <color name="yellow">#ffe734</color>
+    <color name="green">#73ff32</color>
+    <color name="blue">#209af7</color>
+
+    <color name="purple">#b32fff</color>
+    <color name="crimson">#6b0000</color>
+    <color name="aqua">#00ffff</color>
+    <color name="pink">#ff01ea</color>
+    <color name="brown">#552c2c</color>
+    <color name="navy">#000351</color>
+
+
 </resources>

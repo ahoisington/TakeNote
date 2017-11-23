@@ -1,25 +1,287 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="5dp"
+    android:orientation="vertical">
     <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="palettes"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_alignParentTop="true"/>-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="palettes"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentTop="true"/>-->
 
     <TextView
         android:id="@+id/text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="palettes"
-        android:background="@color/darkgreen2"
-        android:textColor="@color/lightgreen"
-        android:padding="12dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/gray"
         android:gravity="center"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="8dp"/>
+        android:padding="12dp"
+        android:text="Text Color"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:text="Black"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/red"
+            android:text="Red"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/orange"
+            android:text="Orange"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/yellow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/yellow"
+            android:text="Yellow"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/green"
+            android:text="Green"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blue"
+            android:text="Blue"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/purple"
+            android:text="Purple"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/crimson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/crimson"
+            android:text="Crimson"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/aqua"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/aqua"
+            android:text="Aqua"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/pink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/pink"
+            android:text="Pink"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/brown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/brown"
+            android:text="Brown"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+
+        <Button
+            android:id="@+id/navy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/navy"
+            android:text="Navy"
+            android:textColor="#FFFFFF"
+            android:textSize="8sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/linearLayout2"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Text Format"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout3">
+
+        <ToggleButton
+            android:id="@+id/tBtn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_btn_toggle"
+            android:checked="false"
+            android:onClick="selectFormat"
+            android:text="Bold"
+            android:textOff="Bold"
+            android:textOn="Bold" />
+
+        <ToggleButton
+            android:id="@+id/tBtn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_btn_toggle"
+            android:text="Italic"
+            android:textOff="Italic"
+            android:textOn="Italic" />
+
+        <ToggleButton
+            android:id="@+id/tBtn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/my_btn_toggle"
+            android:checked="false"
+            android:text="Underline"
+            android:textOff="Underline"
+            android:textOn="Underline" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/linearLayout3"
+        android:layout_marginTop="15dp"
+        android:background="@color/gray"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="Text Size"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text2"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="L"
+            android:background="@drawable/my_btn_toggle"
+            android:textAlignment="center"
+            android:textSize="36sp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="M"
+            android:background="@drawable/my_btn_toggle"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/my_btn_toggle"
+            android:text="S"
+            android:textAlignment="center"
+            android:textSize="12sp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
 
 </RelativeLayout>
